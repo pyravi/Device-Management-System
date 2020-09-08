@@ -1,0 +1,21 @@
+{% extends 'admin/login.html' %}
+{% load static %}
+{% block branding %}
+<style>
+    #header {
+        background: #b5bfe6;
+        color: #2e14a8;
+    }
+</style>
+    <div class="head">
+    <img
+    class="brand_img"
+    src="{% static 'images/logo.png'%}"
+    width="80"
+    height="10"
+    alt="logo"
+
+/>
+        <h1 id="name">Device Management System</h1>
+    </div>
+{% endblock %}

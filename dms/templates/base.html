@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    {# Make modifiable head elements #}
+    <head>
+        <title>
+            {% block title %}Home {% endblock title %} | Device Management
+            System
+        </title>
+        {% block head_favicon %} {% comment %}
+        <link
+            rel="icon"
+            type="image/png"
+            href="{{ STATIC_URL }}images/favicon.ico"
+        />
+        {% endcomment %} {% endblock head_favicon %} 
+        {% block head_meta %} 
+        {% block head_meta_charset %}
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        {% endblock head_meta_charset %}
+        {% block head_meta_contentlanguage %}
+        <meta http-equiv="Content-Language" value="en-US" />
+        {% endblock head_meta_contentlanguage %}
+        {% block head_meta_viewport %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {% endblock head_meta_viewport %}
+        {% endblock head_meta %} 
+        {% block head_css %} 
+         {% block head_css_site %}
+            <link
+                href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css"
+                rel="stylesheet"
+            />
+            <link
+                rel="stylesheet"
+                href="https://formden.com/static/cdn/bootstrap-iso.css"
+            />
+            <link
+                rel="stylesheet"
+                href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css"
+            />
+            <link
+                rel="stylesheet"
+                type="text/css"
+                href="{% static '/css/bootstrap-datetimepicker.css' %}"
+            />
+            <link
+                href="{% static '/bootstrap-4.0.0-dist/css/bootstrap.min.css' %}"
+                rel="stylesheet"
+                media="screen"
+            />
+            {% endblock head_css_site %}
+            {% block head_css_section %}
+            {% endblock head_css_section %}
+            {% block head_css_page %}
+            {% endblock head_css_page %}
+        {% endblock head_css %}
+    </head>
+    <body>
+        <!-- Just an navbar -->
+                    
+    <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="{% static 'images/logo.png' %}" width="200" height="50" alt="">
+    </a>
+    </nav>
+            
+        <div class="container">
+            {% if messages %}
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}" role="alert">
+                        <p>{{ message }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %} {% block content %} {% endblock content %}
+        </div>
+        {% block extra_script %} {% endblock extra_script %}
+
+        <!-- Include Date Range Picker -->
+        <script
+            type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"
+        ></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"
+        />
+    </body>
+</html>

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+ {% block content %}
+
+ <form action="." method="POST">
+    {% csrf_token %}
+        <!-- Security token -->
+        {% csrf_token %} 
+    <!-- Using the formset -->
+       {% crispy form %}
+    </form> 
+
+        
+ {% endblock content %}
+
+{% block extra_script %}
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+	$(document).ready(function(){
+		var date_input=$('input[name="till_date"]'); //our date input has the name "date"
+		var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+		date_input.datepicker({
+			format: 'mm/dd/yyyy',
+			container: container,
+			todayHighlight: true,
+			autoclose: true,
+		})
+	})
+</script>
+{% endblock extra_script %}

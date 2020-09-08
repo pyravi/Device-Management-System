@@ -1,0 +1,38 @@
+{% extends 'admin/base_site.html' %} {% load static %} {% block branding %}
+<div class="head">
+    {% comment %} <h1 id="name">Admin Dashboard</h1> {% endcomment %}
+</div>
+<style>
+    #header {
+        background: #ffffff;
+        color: #2e14a8;
+       
+    }
+   #header a:link, #header a:visited {
+    color: #2f17a2;
+}
+.dropdown-menu {
+    background-color: #5557df;
+ 
+}
+.dropdown-menu .dropdown-menu__item:hover, .dropdown-menu .dropdown-menu__item:link:hover, .dropdown-menu .dropdown-menu__item:visited:hover {
+    background-color: #3e39e6;
+}
+div.breadcrumbs {
+    background: #789ef7;
+}
+
+module h2, .module caption, .inline-group h2 {
+    background: #7068db;
+}
+</style>
+{% endblock %} {% block nav-global %}
+<img
+    class="brand_img"
+    src="{% static 'images/logo.png'%}"
+    width="200"
+    height="19"
+    alt="logo"
+
+/>
+{% endblock %}
