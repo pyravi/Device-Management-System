@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'crispy_forms',
+    'admin_footer',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -59,11 +60,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'device_management.urls'
+AUTHENTICATION_BACKENDS = ['dms.models.EmailBackend']
 
 TEMPLATES = [
     {
-        'BACKEND':
-        'django.template.backends.django.DjangoTemplates',
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
         ],
@@ -75,7 +76,10 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
-            # 'loaders': []
+            'libraries':{
+                'dashboard': 'dms.templatetags.dashboard',
+
+            }
         },
     },
 ]
@@ -151,3 +155,18 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+
+
+from datetime import datetime
+from dms.apps import version
+
+ADMIN_FOOTER_DATA = {
+    'site_url': 'http://127.0.0.1:8000',
+    'site_name': 'Device Management System',
+    'period': '{}'.format(datetime.now().year),
+    'version': 'v {} - '.format(version)
+}
+
+# ADMIN_INDEX_SHOW_REMAINING_APPS=False
+# ADMIN_INDEX_SHOW_REMAINING_APPS_TO_SUPERUSERS=False   
+ADMIN_INDEX_SHOW_MENU=True

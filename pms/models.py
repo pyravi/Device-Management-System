@@ -16,7 +16,7 @@ class TblSettings(models.Model):
     modified = models.DateTimeField(
         db_column='Modified', blank=True, null=True)
 
-    class Meta:  
+    class Meta:
         db_table = 'Tbl_Settings'
 
 
@@ -26,7 +26,7 @@ class TblCountry(models.Model):
     # Field name made lowercase.
     name = models.TextField(db_column='Name', blank=True, null=True)
 
-    class Meta:  
+    class Meta:
         db_table = 'tbl_Country'
 
 
@@ -37,7 +37,7 @@ class TblCurency(models.Model):
     curuncyname = models.TextField(
         db_column='CuruncyName', blank=True, null=True)
 
-    class Meta:  
+    class Meta:
         db_table = 'tbl_Curency'
 
 
@@ -50,7 +50,7 @@ class TblDepartment(models.Model):
     # Field name made lowercase.
     status = models.BooleanField(db_column='Status', blank=True, null=True)
 
-    class Meta:  
+    class Meta:
         db_table = 'tbl_Department'
 
 
@@ -62,7 +62,7 @@ class TblEmployeetechnologies(models.Model):
     # Field name made lowercase.
     techid = models.IntegerField(db_column='TechID', blank=True, null=True)
 
-    class Meta:  
+    class Meta:
         db_table = 'tbl_EmployeeTechnologies'
 
 
@@ -82,11 +82,11 @@ class TblEmployees(models.Model):
     # Field name made lowercase.
     empcode = models.TextField(db_column='EmpCode', blank=True, null=True)
 
-    class Meta:  
+    class Meta:
         db_table = 'tbl_Employees'
 
 
-    
+
 
 class TblFlag(models.Model):
     # Field name made lowercase.
@@ -95,7 +95,7 @@ class TblFlag(models.Model):
     flagimagepath = models.TextField(
         db_column='FlagImagePath', blank=True, null=True)
 
-    class Meta:  
+    class Meta:
         db_table = 'tbl_Flag'
 
 
@@ -117,7 +117,7 @@ class TblHolidays(models.Model):
     datemodified = models.DateTimeField(
         db_column='DateModified', blank=True, null=True)
 
-    class Meta:  
+    class Meta:
         db_table = 'tbl_Holidays'
 
 
@@ -138,7 +138,7 @@ class TblLockedresource(models.Model):
     unlockedby = models.IntegerField(
         db_column='UnlockedBy', blank=True, null=True)
 
-    class Meta:  
+    class Meta:
         db_table = 'tbl_LockedResource'
 
 
@@ -153,7 +153,7 @@ class TblTechnologies(models.Model):
     # Field name made lowercase.
     status = models.IntegerField(db_column='Status', blank=True, null=True)
 
-    class Meta:  
+    class Meta:
         db_table = 'tbl_Technologies'
 
 
@@ -205,8 +205,10 @@ class TblUser(models.Model):
     # Field name made lowercase.
     timesheetcounter = models.IntegerField(db_column='TimesheetCounter')
 
-    class Meta:  
+    class Meta:
         db_table = 'tbl_User'
+        verbose_name = 'Octal Employee'
+        verbose_name_plural = 'Octal Employees'
 
     def __str__(self):
         return f'{self.firstname}[{self.usercode}]'
@@ -236,7 +238,7 @@ class TblUserlog(models.Model):
     modifieddate = models.DateTimeField(
         db_column='ModifiedDate', blank=True, null=True)
 
-    class Meta:  
+    class Meta:
         db_table = 'tbl_UserLog'
 
 
@@ -246,5 +248,5 @@ class TblUsertype(models.Model):
     # Field name made lowercase.
     usertype = models.TextField(db_column='UserType', blank=True, null=True)
 
-    class Meta:      
+    class Meta:
         db_table = 'tbl_UserType'

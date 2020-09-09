@@ -4,6 +4,22 @@ from django.utils.translation import ugettext_lazy as _
 from django.utils.safestring import mark_safe
 from django.contrib import messages
 # Create your models here.
+from django.contrib.auth import get_user_model
+from django.contrib.auth.backends import ModelBackend
+
+
+class EmailBackend(ModelBackend):
+    def authenticate(self, request, username=None, password=None, **kwargs):
+        UserModel = get_user_model()
+        try:
+            user = UserModel.objects.get(email=username)
+        except UserModel.DoesNotExist:
+            return None
+        else:
+            if user.check_password(password):
+                return user
+        return None
+
 
 class Images(models.Model):
     device_image=models.ForeignKey("Device_manager", verbose_name=_("Device Image"), on_delete=models.CASCADE)
@@ -68,6 +84,9 @@ class Device_allocation_manager(models.Model):
     till_date= models.DateTimeField(_("Till Date"), auto_now=False, auto_now_add=False)
     created_date =models.DateTimeField(_("Date"), auto_now=True)
 
+    def __str__(self):
+        return f'{self.assign_employee}' 
+
     class Meta:
         verbose_name = 'Device Allocation Manager'
 
@@ -82,6 +101,9 @@ class Request_manager(models.Model):
     till_date= models.DateTimeField(_("Till Date"), auto_now=False, auto_now_add=False)
     created_date =models.DateTimeField(_("Request Created Date"), auto_now=True)
 
+    def __str__(self):
+        return self.email
+    
     class Meta:
         verbose_name = 'Request Manager'
 

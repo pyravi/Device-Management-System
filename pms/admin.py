@@ -7,7 +7,7 @@ from .models import (TblSettings,
                      TblCountry, TblCurency, TblDepartment, TblEmployeetechnologies,
                      TblEmployees, TblFlag, TblHolidays, TblLockedresource, TblTechnologies, TblUser, TblUserlog,
                      TblUsertype
-                     )
+                    )
 
 
 class TblUserAdmin(admin.ModelAdmin):
@@ -127,7 +127,7 @@ class TblLockedresourceAdmin(admin.ModelAdmin):
 # admin.site.register(TblHolidays, TblHolidaysAdmin)
 # admin.site.register(TblLockedresource, TblLockedresourceAdmin)
 # admin.site.register(TblTechnologies, TblTechnologiesAdmin)
-admin.site.register(TblUser, TblUserAdmin)
+# admin.site.register(TblUser, TblUserAdmin)
 # admin.site.register(TblUserlog, TblUserlogAdmin)
 # admin.site.register(TblUsertype, TblUsertypeAdmin)
 # admin.site.register(TblSettings, TblSettingsAdmin)

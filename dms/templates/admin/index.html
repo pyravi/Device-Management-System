@@ -2,12 +2,25 @@
 
 {% comment %} {% extends "admin/base_site.html" %} {% endcomment %}
 
-{% block something %}
-<p>Hello</p>
+{% block sidebar %}
 
-{% endblock %}
+{% endblock sidebar %}
+{% comment %} {% block nav-sidebar %}
+{% for app in app_list %}
+{{ app.name }}
+{% endfor %}
 
 
+{% endblock %} {% endcomment %}
 
 
+  {% comment %} {% block content %}
+          {% for app in app_list %}
+         
+          {% if  app.name %}
+          {{app}}
+          {% endif %}
+{% endfor %}
+          {% endblock %}
+       {% endcomment %}
 

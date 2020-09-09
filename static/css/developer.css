@@ -1,0 +1,164 @@
+a.btn.btn-success.change_password {
+	color: #fff;
+	cursor: pointer;
+}
+
+a.btn.btn-success.change_password i {
+	padding-right: 8px;
+}
+
+.table .column-title a, .table .column-title a:hover {
+	color: #ECF0F1;
+}
+
+.profile_picture_sec {
+    width: 100px;
+    height: 100px;
+}
+
+.profile_picture_sec img{
+    width: 100%;
+    height: 100%;
+}
+
+.profile_pic_list_sec {
+    width: 100px;
+    height: 100px;
+}
+
+.profile_pic_list_sec img {
+	width: 100%;
+    height: 100%;
+	border-radius: 50%;
+}
+
+.logo_pic_list_sec {
+    width: 150px;
+    height: 100px;
+}
+
+.logo_pic_list_sec img {
+	width: 100%;
+    height: 100%;
+}
+
+.card {
+    padding-bottom: .5rem;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
+}
+
+.border-left-primary {
+	border-left: .25rem solid #1ABB9C;
+}
+
+.text-primary {
+    color: #1ABB9C!important;
+}
+
+.border-left-secondary {
+	border-left: .25rem solid #36b9cc;
+}
+
+.text-secondary {
+    color: #36b9cc!important;
+}
+
+.text-gray-300 {
+    color: #dddfeb!important;
+}
+
+.nav-md ul.nav.child_menu li:after {
+    top: 46px;
+}
+
+a.margin-left-10 {
+    margin-left: 10px;
+}
+
+.input-group-prepend span {
+    background-color: #e9ecef;
+}
+
+.login_btn {
+    background-color: #e9ecef;
+}
+
+a.forgot_password {
+    color: #e9ecef;
+}
+
+a.forgot_password:hover {
+    color: #e9ecef;
+}
+
+.tag:after {
+    border-left: none;
+}
+
+span.required {
+    color: #ff0000;
+}
+
+.bootstrap-select.show-tick .dropdown-menu .selected span.check-mark {
+    color: #26B99A;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    background-color: #26B99A;
+}
+
+ul.validation_message {
+    padding-left: 0;
+}
+ul.validation_message li {
+    list-style-type: none;
+}
+
+.about_driver {
+    width: 100%;
+}
+
+.car_picture {
+    width: 100%;
+    height: auto;
+}
+
+a.trash_overlay i {
+    z-index: 999;
+    position: relative;
+    color: #fff;
+}
+a.trash_overlay {
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    width: calc(100% - 20px);
+    text-align: center;
+    background: rgba(0,0,0,0.6);
+    z-index: 9;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    opacity: 0; visibility: hidden;
+    transition: 0.4s ease all;
+}
+
+.x_panel .col.position-relative:hover a.trash_overlay  {opacity: 1; visibility: visible; top: 0px;}
+
+.btn.btn-primary.btn-file, .btn.btn-primary.btn-file:active {
+    background: #26B99A;
+    border-color: #26B99A;
+}
+
+
+.hide { display: none; }
+
+.fileinput-remove span {
+    display: none;
+}
+
+.assignBtn span{ line-height: normal;}
+.assignBtn .select2-container--default .select2-selection--single .select2-selection__rendered{ padding-top: 0px;}
+.assignBtn .select2-container--default .select2-selection--single{ min-height: 32px; padding: 6px 8px;}
